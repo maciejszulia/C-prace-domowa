@@ -16,6 +16,4 @@ int main()
 	printf("%lf", min(1, 0));
 
 
-
-	return 0;
 }

@@ -11,6 +11,4 @@ int main()
 {
 	printf("%d", potega(3));
 
-
-	return 0;
 }

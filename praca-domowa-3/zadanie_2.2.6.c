@@ -17,7 +17,4 @@ int main()
 
 	printf("%lld", funkcja(10, 10));
 
-
-
-	return 0;
 }

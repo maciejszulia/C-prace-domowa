@@ -1,3 +1,4 @@
+//zadanie 2 rodział 9 - funkcje
 #include <stdio.h>
 #include <stdlib.h>
 
