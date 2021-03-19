@@ -74,3 +74,47 @@ int main()
 	printf("%lld", funkcja(10, 10));
 
 }
+
+//Krzaczkowski, Zadanie 2.2.22
+#include <stdio.h>
+#include <stdlib.h>
+
+int ciag(int n)
+{
+    int a[n];
+    a[0] = 1;
+    int i = 1;
+    while (i <= n)
+    {
+        a[i] = 2 * a[i - 1] + 5;
+        i++;
+    }
+    printf("\n%d", a[n]);
+}
+int main()
+{
+    ciag(2);
+}
+
+//2.2.33
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
+int suma(int a, ...)
+{
+    va_list arg;
+    int suma = 0, i;
+    va_start(arg, a);
+    for (i = a; i; i = va_arg(arg, int))
+    {
+        suma = suma + i;
+    }
+    va_end(arg);
+    return suma;
+}
+
+int main()
+{
+    printf("\n%d", suma(1, 2, 0));
+}
