@@ -1,36 +1,106 @@
-// 3.2.4 Napisz funkcję otrzymującą jako argumenty wskaźnikido dwóch zmien-nych typu int, 
-// która zamienia ze sobą wartości wskazywanych zmien-nych tylko wtedy
-// gdy wskazywana przez drugi argument zmienna jestmniejsza od zmiennej wskazywanej przez pierwszy argument.
-
-#include<stdio.h>
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
 
 
-void zamien(int* a, int* b)
-{
-    if (*b > *a)
-        swap(*a, *b);
+int dwaWskazniki(int *a, int *b){
+    if(*a>=*b){
+        return *b;
+    }
+    else
+        return *a;
+
 }
+
+int* dwaWskazniki2(int *a, int *b){
+    if(*a>=*b){
+        return b;
+    }
+    else
+        return a;
+
+}
+void switcharoo(int *a, int *b){
+
+    int  placeholder = *a;
+    *a = *b;
+    *b = placeholder;
+
+}
+
+void switcharoo2(int *a, int *b){
+    if (*a>*b){
+    int  placeholder = *a;
+    *a = *b;
+    *b = placeholder;
+    }
+}
+
+int sumaWs(int *a, int*b){
+
+    int suma = *a+*b;
+    return suma;
+
+}
+
+void endowu(int n, int *w){
+    *w = n;
+
+
+}
+int * miejsce(){
+
+
+    return malloc(sizeof(int));
+
+}
+
+int * miejsce2(){
+    return malloc(sizeof(double));
+    }
+
+int * miejsce3(unsigned int n){
+
+    return malloc(n*sizeof(int));
+
+
+}
+int * miejsce4(unsigned int n){
+
+    return malloc(n*sizeof(double));
+
+
+}
+
+void constToVar(const int *a, int *b){
+    *b = *a;
+}
+
+void constToVar2(const int *a, const * int b){
+
+
+
+}
+
 
 int main()
 {
-    int A, B;
 
-    scanf_s("%d %d", &A, &B);
-    printf("A = %d B = %d\n", A, B);
+   const int a = 6;
+    int b = 3;
+  //  printf("%d", dwaWskazniki2(&a, &b));
 
-    zamien(&A, &B);
+//switcharoo2(&a, &b);
+//printf("%d%d", a, b);
+   // printf("%d", sumaWs(&a, &b));
+//    endowu(a, &b);
+  //  printf("%d\n%d", a, b);
+    //printf("%d", miejsce());
+    //printf("%d", miejsce2());
+    //printf("%d", miejsce3(5));
+    //printf("%d", miejsce4(5));
 
-    printf("A = %d B = %d", A, B);
+   // constToVar(&a, &b);
+    //printf("%d",  b);
 
     return 0;
 }
-
-// 3.2.5 Napisz funkcję, której argumentami są dwa wskaźniki do stałych typu int
-// zaś zwracaną wartością jest suma wartości zmiennych wskazywanych przez argumenty.
-
-// 3.2.6 Napisz funkcję, której argumentami są n typu int oraz w wskaźnik do int
-// która przepisuje wartośćndo zmiennej wskazywanej przezw.
-
-//3.2.10 Napisz bezargumentową funkcję, która rezerwuje pamięć
-//dla pojedynczej zmiennej typu double i zwraca jako wartość wskaźnik do niej.
